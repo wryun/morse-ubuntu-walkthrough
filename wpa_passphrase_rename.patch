@@ -1,0 +1,26 @@
+From 53e4dd53874da368e54593fc3c6b6a679229e67a Mon Sep 17 00:00:00 2001
+From: Your Name <you@example.com>
+Date: Wed, 11 Mar 2026 02:23:17 +0000
+Subject: [PATCH] wpa_passphrase wasn't renamed to wpa_passphrase_s1g in instal
+
+---
+ wpa_supplicant/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/wpa_supplicant/Makefile b/wpa_supplicant/Makefile
+index 982170d86..f7aadae3a 100644
+--- a/wpa_supplicant/Makefile
++++ b/wpa_supplicant/Makefile
+@@ -106,7 +106,7 @@ $(DESTDIR)$(BINDIR)/%: %
+ install: $(addprefix $(DESTDIR)$(BINDIR)/,$(BINALL))
+ 	$(MAKE) -C ../src install
+ ifndef CONFIG_NO_WPA_PASSPHRASE
+-	install -D wpa_passphrase $(DESTDIR)/$(BINDIR)/wpa_passphrase
++	install -D wpa_passphrase_s1g $(DESTDIR)/$(BINDIR)/wpa_passphrase_s1g
+ endif
+ 
+ ifdef CONFIG_BUILD_PASN_SO
+-- 
+2.34.1
+
+
